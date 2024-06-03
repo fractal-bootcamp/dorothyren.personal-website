@@ -12,8 +12,8 @@ export const meta: MetaFunction = () => {
 const Header = () => {
   return (
     <header>
-      <h1>Dorothy's Site</h1>
-      <h4>probably rolling around in dirt</h4>
+      <h1>Dorothy Ren</h1>
+      <h4 className="shadow-sm">probably rolling around in dirt</h4>
       <nav>
         <ul>
           <Links />
@@ -21,7 +21,9 @@ const Header = () => {
             About
           </a>
         </ul>
-        Projects
+        <a href="/projects">
+          Projects
+        </a>
       </nav>
     </header>
   );
@@ -32,7 +34,6 @@ export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
       <Header />
-
     </div>
   )
 }
