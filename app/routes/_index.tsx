@@ -1,4 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
+import About from './about';
+import Links from "./links";
 
 export const meta: MetaFunction = () => {
   return [
@@ -7,35 +9,30 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+const Header = () => {
+  return (
+    <header>
+      <h1>Dorothy's Site</h1>
+      <h4>probably rolling around in dirt</h4>
+      <nav>
+        <ul>
+          <Links />
+          <a href="/about">
+            About
+          </a>
+        </ul>
+        Projects
+      </nav>
+    </header>
+  );
+};
+
+
 export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
+      <Header />
+
     </div>
-  );
+  )
 }
