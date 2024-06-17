@@ -1,4 +1,5 @@
-import { ReactElement } from "react";
+import { ReactElement, useRef, Ref, RefObject } from "react";
+import { motion } from "framer-motion"
 
 
 //create an array with all the data that you want to render on screen
@@ -26,6 +27,12 @@ const poetryList =
             excerpt: "A little while, and my longing shall gather dust and foam for another body. A little while, a moment of rest upon the wind, and another woman shall bear me.",
             link: "https://poets.org/poem/farewell-2",
         },
+        {
+            title: "You're",
+            author: "Sylvia Plath",
+            excerpt: "Bent-backed Atlas, our traveled prawn. Snug as a bud and at home Like a sprat in a pickle jug.",
+            link: "https://www.poetryfoundation.org/poems/49010/youre",
+        }
 
     ]
 
@@ -34,11 +41,17 @@ interface PoemProps {
     author: string
     excerpt: string
     link: string
+    containerReference: RefObject<HTMLDivElement>
 }
 
-function Poems(props: PoemProps) {
+function Poem(props: PoemProps) {
+    //onclick, put a toggle here, if true, show the first side, if false, change to other side
     return (
         <>
+            <motion.div
+    drag
+    dragConstraints={props.containerReference}
+    >
             <div>
                 <div className = "container px-5 py-5 border rounded-md bg-stone-50 hover:bg-orange-50 w-full max-w-lg">
                 <p className="underline text-md"> {props.title} </p>
@@ -47,33 +60,30 @@ function Poems(props: PoemProps) {
                 <p> {props.excerpt}</p> 
                 </div>
             </div>
+            </motion.div>
+
         </>
     )
 }
 
-function poemDataToReactComponent(poemData: {
-    title: string;
-    author: string;
-    excerpt: string;
-    link: string;
-}): ReactElement {
-    return <Poems title={poemData.title} author={poemData.author} excerpt={poemData.excerpt} link={poemData.link} />
-}
-
 export default function PoemPage() {
-    return (
-        <div className = "pr-32 pl-16 pb-8 pt-16">
+    const draggableContainerReference = useRef<HTMLDivElement>(null)
+
+    return (    
+        <motion.div ref={draggableContainerReference} className = "pr-32 pl-16 pb-8 pt-16">
              <h2>poetry is not a luxury ~
-                excerpts from poems I love. 
+                these are excerpts from worthy poems
             </h2>
             <div className="flex flex-wrap mb-4 md:flex md:flex-row pt-12 gap-6">
-            {poetryList.map(poemDataToReactComponent)}
+            {poetryList.map(poemData => {
+               return <Poem title={poemData.title} author={poemData.author} excerpt={poemData.excerpt} link={poemData.link} containerReference={draggableContainerReference} />
+               
+            })}
 
             </div>
-        </div>
+        </motion.div>
     )
 }
-
 
 
 /*
