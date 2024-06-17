@@ -1,4 +1,4 @@
-import { ReactElement } from "react"
+import { ReactElement } from "react";
 
 
 //create an array with all the data that you want to render on screen
@@ -10,7 +10,7 @@ const projectList =
     [
         {
             title: "Fractal Bootcamp",
-            description: "Having a good time learning how to code",
+            description: "Spending Summer 2024 learning how to code",
             image: "projects/fractalbootcamp.jpeg",
         },
         {

@@ -1,22 +1,24 @@
 import type { MetaFunction } from "@remix-run/node";
 import About from './about';
 import Links from "./links";
+import React from "react";
+import Collections from "./collections._index";
+
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+   
   ];
 };
 
 const Header = () => {
   return (
     <header>
-      <h1>Dorothy Ren</h1>
+      <h1>dorothy ren</h1>
       <h4 className="shadow-sm">probably rolling around in dirt</h4>
       <nav>
         <ul>
-          <Links />
+       
           <a href="/about">
             About
           </a>
@@ -24,8 +26,15 @@ const Header = () => {
         <a href="/projects">
           Projects
         </a>
+        <ul>
+        <a href="/collections">
+          Collections
+        </a>
+        </ul>
+        <Links />
       </nav>
     </header>
+    
   );
 };
 
