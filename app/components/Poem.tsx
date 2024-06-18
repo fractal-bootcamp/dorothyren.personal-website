@@ -4,11 +4,11 @@ import { useState } from "react";
 
 
 interface Poem {
-  title: string
-  author: string
-  excerpt: string
-  fulltext: string
-  link: string
+  title: string,
+  author: string,
+  excerpt: string,
+  fulltext: string,
+  link: string,
 }
 
 
@@ -54,7 +54,7 @@ function Poem(props: Poem) {
               animate={{ rotateY: flip ? 180 : 0 }}
               style={{ backfaceVisibility: "hidden" }}
             >
-              <div>{props.fulltext}</div>
+              <div style={{ whiteSpace: "pre-wrap" }}>{props.fulltext}</div>
             </motion.div>
           </motion.div>
         </motion.div>

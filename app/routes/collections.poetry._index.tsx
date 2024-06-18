@@ -61,19 +61,22 @@ import Poem from "~/components/Poem";
 // )
 // }
 
-export default function PoemPage(props) {
+export default function PoemPage(props: any) {
+    console.log("hell props", props)
     const draggableContainerReference = useRef<HTMLDivElement>(null)
 
     return (
         <div className="App">
-
-            <motion.div ref={draggableContainerReference} className="pr-32 pl-16 pb-8 pt-16">
-                <div className="flex flex-wrap mb-4 md:flex md:flex-row pt-12 gap-6">
-                    {poems.map(poemData => {
-                        return <Poem {...poemData} />
-                    })}
-                </div>
-            </motion.div>
+            <div className="pl-16 pt-16">
+                <h1 className="italic">tap to reveal</h1>
+                <motion.div ref={draggableContainerReference} className="pr-32 pl-16 pb-8 pt-8">
+                    <div className="flex flex-wrap mb-4 md:flex md:flex-row pt-12 gap-6">
+                        {poems.map(poemData => {
+                            return <Poem {...poemData} />
+                        })}
+                    </div>
+                </motion.div>
+            </div>
         </div>
     );
     //else return other side html 
