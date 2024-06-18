@@ -54,10 +54,17 @@ function projectDataToReactComponent(projectData: {
 
 export default function ProjectPage() {
     return (
-        <div className="justify-content:flex-start flex-wrap:wrap grid grid-cols-4 gap-4 p-4 max-w-[400px] md:max-w-[800px]">
-            <h2>Some projects I'm working on</h2>
-            {projectList.map(projectDataToReactComponent)}
-        </div>
+        <>
+            <div className="justify-content:flex-start flex-wrap:wrap grid grid-cols-4 gap-4 p-4 max-w-[400px] md:max-w-[800px]">
+                <h2>Some projects I'm working on</h2>
+                {projectList.map(projectDataToReactComponent)}
+            </div>
+            <div className="pl-3">
+                <button className="border rounded-md p-2 w-16 bg-gray-50 text-sm">
+                    <a href="/">Home</a>
+                </button>
+            </div>
+        </>
     )
 }
 

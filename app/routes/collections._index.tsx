@@ -5,7 +5,7 @@ export default function Collections() {
     return (
         <div className="pl-4 pt-4">
             <div className="justify-content: space-around">
-                <div> collections of poems, words, and concepts that are influential </div>
+                <div> collections of poems, words, and concepts </div>
 
                 <div className="underline p-4 ">
                     <ul>
@@ -18,6 +18,14 @@ export default function Collections() {
                         <a href="/collections/content">content</a>
                     </ul>
                 </div >
+                <br></br>
+                <br></br>
+                <br></br>
+                <div className="pl-3">
+                    <button className="border rounded-md p-2 w-16 bg-gray-50 text-sm">
+                        <a href="/">Home</a>
+                    </button>
+                </div>
             </div>
         </div >
     );

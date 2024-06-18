@@ -1,16 +1,19 @@
 export default function About() {
     return (
-        <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-            <h2> Here's more </h2>
-            <p>
-                Hey, I'm Dorothy. I'm learning how to code, dance, and hunt.
-            </p>
-            <img src="/projects/IMG_4285.JPG" alt="Dorothy" style={{ height: 80, width: 80 }} />
-            <br></br>
-            <button>
-                <a href="/home">Home</a>
-            </button>
-        </div>
-
+        <>
+            <div className="text-md pb-4 pt-4 pl-3 h-screen">
+                <div> Hey, I'm Dorothy. This website is a work in progress! </div>
+                <br></br>
+                <div className="">
+                    <img src="/projects/dorothy-cdmx.jpg" alt="Dorothy" className="object-contain h-192 w-96 drop-shadow-md m-auto md:object-scale-down" />
+                </div>
+                <br></br>
+                <div className="pl-3">
+                    <button className="border rounded-md p-2 w-16 bg-gray-50 text-sm">
+                        <a href="/">Home</a>
+                    </button>
+                </div>
+            </div>
+        </>
     );
-}
+};
