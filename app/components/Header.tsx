@@ -1,4 +1,5 @@
-import Links from "~/routes/links";
+import Links from "~/components/links";
+import About from "../routes/About";
 
 export function Header() {
     return (
