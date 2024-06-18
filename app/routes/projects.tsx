@@ -1,4 +1,4 @@
-import { ReactElement } from "react"
+import { ReactElement } from "react";
 
 
 //create an array with all the data that you want to render on screen
@@ -10,7 +10,7 @@ const projectList =
     [
         {
             title: "Fractal Bootcamp",
-            description: "Having a good time learning how to code",
+            description: "Spending Summer 2024 learning how to code",
             image: "projects/fractalbootcamp.jpeg",
         },
         {
@@ -54,10 +54,17 @@ function projectDataToReactComponent(projectData: {
 
 export default function ProjectPage() {
     return (
-        <div className="justify-content:flex-start flex-wrap:wrap grid grid-cols-4 gap-4 p-4 max-w-[400px] md:max-w-[800px]">
-            <h2>Some projects I'm working on</h2>
-            {projectList.map(projectDataToReactComponent)}
-        </div>
+        <>
+            <div className="justify-content:flex-start flex-wrap:wrap grid grid-cols-4 gap-4 p-4 max-w-[400px] md:max-w-[800px]">
+                <h2>Some projects I'm working on</h2>
+                {projectList.map(projectDataToReactComponent)}
+            </div>
+            <div className="pl-3">
+                <button className="border rounded-md p-2 w-16 bg-gray-50 text-sm">
+                    <a href="/">Home</a>
+                </button>
+            </div>
+        </>
     )
 }
 

@@ -1,6 +1,6 @@
 export default function Links() {
     return (
-        <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8", justifyContent: "space-between", textDecoration: "underline" }}>
+        <div className="underline pl-4">
             <ul>
                 <a href="https://www.x.com/dorothyxren">X</a>
             </ul>
