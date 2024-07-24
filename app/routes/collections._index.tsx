@@ -8,15 +8,15 @@ export default function Collections() {
             <Header selected="collections" />
             <div className="flex flex-col p-8 m-8 border rounded-md bg-white shadow-md">
                 <div className="justify-content: space-around">
-                    <div> collections of poems, words, and concepts </div>
+                    <div> collections of poems and concepts </div>
 
                     <div className="underline p-4 ">
                         <ul>
                             <a href="/collections/poetry">poetry</a>
                         </ul>
-                        <ul>
+                        {/* <ul>
                             <a href="/collections/words">words</a>
-                        </ul>
+                        </ul> */}
                         <ul>
                             <a href="/collections/content">content</a>
                         </ul>
