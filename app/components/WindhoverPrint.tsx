@@ -79,7 +79,7 @@ export function WindhoverPrint() {
 
     const [currentLine, setCurrentLine] = useState(0);
 
-    const poemLines = poem.map(line => <p>{line.content}</p>)
+    // const poemLines = poem.map(line => <p>{line.content}</p>)
 
     function onClick() {
         setCurrentLine(currentLine + 1)
@@ -95,15 +95,16 @@ export function WindhoverPrint() {
 
     return (
         <>
-            <div className="w-screen h-screen p-8"
-                onClick={onClick}
-            >
-                {linesToPrint.map((x) => <p className="p-2 font-mono">{x.content}</p>)}
+            <div className="w-screen h-screen p-8" onClick={onClick}>
+                <div className="flex flex-col items-start">
+                    <p className="p-4 font-mono italic text-sm">Click for the next line of the poem</p>
+                    {linesToPrint.map((x) => <p className="p-2 font-mono">{x.content}</p>)}
+                </div>
                 <div>
                     <br></br>
                     <br></br>
                     <button className="border border-gray-200 hover:bg-gray-400 rounded-md h-8 w-16 font-mono bg-gray-200">
-                        <a href="/">reset</a>
+                        <a href="/projects/thewindhover">reset</a>
                     </button>
                 </div>
             </div>

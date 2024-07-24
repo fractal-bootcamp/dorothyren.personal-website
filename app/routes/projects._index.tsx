@@ -1,5 +1,6 @@
 import { ReactElement } from "react";
 import { Header } from "~/components/Header";
+import { Socials } from "~/components/SocialButtons";
 
 
 //create an array with all the data that you want to render on screen
@@ -37,15 +38,10 @@ import { Header } from "~/components/Header";
 
 const projectList =
     [
-        {
-            title: "The Windhover",
-            description: "Memorizing the poem by Gerard Manley Hopkins",
-            image: "/projects/fractalbootcamp.jpeg",
-            link: "/projects/thewindhover",
-        },
+
         {
             title: "Generative Art",
-            description: "A fullstack generative art project that uses a postgres database hosted on Supabase, a server hosted on Render, and a frontend deployed on Netlify",
+            description: "A fullstack generative art project that uses a postgres database hosted on Supabase, an express server hosted on Render, a React frontend deployed on Netlify, and uses Clerk for auth. ",
             image: "/projects/fractalbootcamp.jpeg",
             link: "https://dxr-gen-art.netlify.app",
         },
@@ -53,8 +49,20 @@ const projectList =
             title: "Developer Trading Cards",
             description: "Uses the Nolita AI web scraper to scrape Dev.to developer blog profiles and generate a list of skills and attributes that are then displayed in a collectible trading card format",
             image: "/projects/fc-realmofdreams.jpeg",
+            link: "https://github.com/fractal-bootcamp/growthhacks.HackerCards"
         },
-
+        {
+            title: "Kitchen Gossip",
+            description: "A slackbot that pulls recent Github activity and posts a summary about what each user's been cookin' up",
+            image: "/projects/kitchengossip.png",
+            link: "https://github.com/fractal-bootcamp/hackathon-kitchen-gossip"
+        },
+        {
+            title: "The Windhover",
+            description: "Memorizing the poem by Gerard Manley Hopkins",
+            image: "/projects/windhover.jpeg",
+            link: "/projects/thewindhover",
+        },
     ]
 
 interface ProjectProps {
@@ -67,12 +75,10 @@ interface ProjectProps {
 export function Project(props: ProjectProps) {
     return (
         <>
-            <div className="border rounded-md p-4 h-full w-full">
-                <a href={props.link} className="underline text-lg">{props.title}</a>
-                <br></br>
-                <br></br>
-                <p> {props.description} </p>
-                <img src={props.image} alt={props.title} className="w-full" />
+            <div className="border rounded-md p-4 h-full w-full bg-zinc-100 space-y-4">
+                <a href={props.link} className="underline text-lg block">{props.title}</a>
+                <p>{props.description}</p>
+                {props.image && <img src={props.image} alt={props.title} className="w-full rounded-md" />}
             </div>
         </>
     )
@@ -85,22 +91,20 @@ export function Project(props: ProjectProps) {
 export default function ProjectPage() {
     return (
         <>
-            <div className="justify-content:flex-start flex-wrap:wrap grid grid-cols-4 gap-4 p-4 max-w-[400px] md:max-w-[800px]">
-                <h2>Some projects I'm working on</h2>
-                {projectList.map((projectData, index) =>
-                    <Project
-                        key={index}
-                        title={projectData.title}
-                        description={projectData.description}
-                        image={projectData.image}
-                        link={projectData.link} />
-                )}
-            </div>
-            <div className="pl-3">
-                <div className="flex justify-center margin-bottom-30px fixed bottom-10 w-full">
-                    <button className="border rounded-md p-2 w-16 bg-gray-50 text-sm">
-                        <a href="/">Home</a>
-                    </button>
+            <Header selected="projects" />
+            <div className="flex flex-col p-8 m-8 border rounded-md bg-white shadow-md">
+                <div className="mb-4 ">
+                    <h1 className="text-xl">These are some projects I'm working on</h1>
+                </div>
+                <div className="justify-content:flex-start flex-wrap:wrap grid grid-cols-4 gap-8 p-4 max-w-full md:max-w-full">
+                    {projectList.map((projectData, index) =>
+                        <Project
+                            key={index}
+                            title={projectData.title}
+                            description={projectData.description}
+                            image={projectData.image}
+                            link={projectData.link} />
+                    )}
                 </div>
             </div>
         </>
