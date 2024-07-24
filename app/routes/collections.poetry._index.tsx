@@ -61,8 +61,7 @@ import Poem from "~/components/Poem";
 // )
 // }
 
-export default function PoemPage(props: any) {
-    console.log("hell props", props)
+export default function PoemPage() {
     const draggableContainerReference = useRef<HTMLDivElement>(null)
 
     return (

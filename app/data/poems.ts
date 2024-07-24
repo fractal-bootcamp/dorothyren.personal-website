@@ -2,6 +2,31 @@
 const poems =
     [
         {
+            title: "The Windhover",
+            author: "Gerard Manley Hopkins",
+            excerpt: "My heart in hiding Stirred for a bird, – the achieve of, the mastery of the thing!",
+            link: "https://www.poetryfoundation.org/poems/44402/the-windhover",
+            fulltext:
+                `
+    To Christ our Lord
+
+I caught this morning morning's minion, king-
+    dom of daylight's dauphin, dapple-dawn-drawn Falcon, in his riding
+    Of the rolling level underneath him steady air, and striding
+High there, how he rung upon the rein of a wimpling wing
+In his ecstasy! then off, off forth on swing,
+    As a skate's heel sweeps smooth on a bow-bend: the hurl and gliding
+    Rebuffed the big wind. My heart in hiding
+Stirred for a bird, – the achieve of, the mastery of the thing!
+
+Brute beauty and valour and act, oh, air, pride, plume, here
+    Buckle! AND the fire that breaks from thee then, a billion
+Times told lovelier, more dangerous, O my chevalier!
+        
+    No wonder of it: shéer plód makes plough down sillion
+Shine, and blue-bleak embers, ah my dear,
+    Fall, gall themselves, and gash gold-vermilion.`,
+        }, {
             title: "Transformation",
             author: "Adam Zagajewski",
             excerpt: "I've taken long walks, craving one thing only...",
@@ -160,6 +185,28 @@ because what sound would it make,
 passing through nothing?
             `,
         },
+        {
+            title: "The New Colossus",
+            author: "Emma Lazarus",
+            excerpt: "...her mild eyes command The air-bridged harbor that twin cities frame.",
+            link: "https://www.poetryfoundation.org/poems/46550/the-new-colossus",
+            fulltext: `
+Not like the brazen giant of Greek fame,
+With conquering limbs astride from land to land;
+Here at our sea-washed, sunset gates shall stand
+A mighty woman with a torch, whose flame
+Is the imprisoned lightning, and her name
+Mother of Exiles. From her beacon-hand
+Glows world-wide welcome; her mild eyes command
+The air-bridged harbor that twin cities frame.
+“Keep, ancient lands, your storied pomp!” cries she
+With silent lips. “Give me your tired, your poor,
+Your huddled masses yearning to breathe free,
+The wretched refuse of your teeming shore.
+Send these, the homeless, tempest-tost to me,
+I lift my lamp beside the golden door!”
+            `,
+        }
     ]
 
 export default poems
