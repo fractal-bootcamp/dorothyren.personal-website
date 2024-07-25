@@ -1,6 +1,7 @@
 import React from "react";
 import PoemPage from "./collections.poetry._index";
 import { Header } from "~/components/Header";
+import { Outlet } from "@remix-run/react";
 
 export default function Collections() {
     return (
@@ -25,7 +26,6 @@ export default function Collections() {
                     <br></br>
                     <br></br>
                     <div className="pl-3">
-
                     </div>
                 </div>
             </div >
