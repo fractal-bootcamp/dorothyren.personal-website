@@ -1,30 +1,50 @@
-import Links from "~/components/links";
+import { motion } from "framer-motion"
 
-export function Header() {
+export function Header({ selected = "" }: { selected: string; }) {
     return (
-        <header>
-            <div className="text-2xl shadow-md pb-4 pt-4 pl-3">Dorothy Ren</div>
-            <div className="pl-4 pt-3">
-                <nav>
-                    <ul>
-                        <a href="/about">
-                            About
-                        </a>
-                    </ul>
-                    <a href="/projects">
-                        Projects
-                    </a>
-                    <ul>
-                        <a href="/collections">
-                            Collections
-                        </a>
-                    </ul>
-                    <br></br>
-                    <br></br>
-                </nav>
+        <>
+            <div className="flex flex-row p-1 justify-center flex-wrap items-center space-x-1 sm:space-x-2">
+                <HeaderButton target="./" title="home" selected={selected} />
+                <HeaderButton target="projects" title="projects" selected={selected} />
+                <HeaderButton target="collections" title="collections" selected={selected} />
             </div>
-        </header >
-
+        </>
     );
-};
+}
 
+type HeaderButtonProps = {
+    target: string,
+    title: string,
+    selected: string
+}
+
+
+function HeaderButton({ target, title, selected = "" }: HeaderButtonProps) {
+    const conditionalStyles = (target === selected) ?
+        "bg-amber-300 text-lime-900" :
+        "bg-indigo-400 text-white"
+
+    const buttonClass = `${conditionalStyles} 
+      hover:bg-yellow-200 
+      hover:text-yellow-950
+      md:py-2
+      md:px-4
+  
+      text-xs
+      sm:text-base
+  
+      rounded`
+    return (
+        <div className="py-8 p-3">
+            <a href={"/" + target}>
+                <motion.button
+                    className={buttonClass}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.90 }}
+                >
+                    {title}
+                </motion.button>
+            </a>
+        </div>
+    )
+}

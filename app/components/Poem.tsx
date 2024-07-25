@@ -23,10 +23,10 @@ function Poem(props: Poem) {
     <motion.div
       drag
       dragConstraints={{
-        top: -100,
-        left: -100,
-        right: 100,
-        bottom: 100,
+        top: -150,
+        left: -150,
+        right: 150,
+        bottom: 150,
       }}>
       <div>
         <motion.div

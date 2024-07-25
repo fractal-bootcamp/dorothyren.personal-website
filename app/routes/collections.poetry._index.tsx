@@ -2,6 +2,7 @@ import { ReactElement, useRef, Ref, RefObject, useState } from "react";
 import { filterProps, motion } from "framer-motion"
 import poems from "~/data/poems";
 import Poem from "~/components/Poem";
+import { Header } from "~/components/Header";
 
 //create an array with all the data that you want to render on screen
 // figure out how to render one instance of that data
@@ -61,23 +62,25 @@ import Poem from "~/components/Poem";
 // )
 // }
 
-export default function PoemPage(props: any) {
-    console.log("hell props", props)
+export default function PoemPage() {
     const draggableContainerReference = useRef<HTMLDivElement>(null)
 
     return (
-        <div className="App">
-            <div className="pl-16 pt-16">
-                <h1 className="italic">tap to reveal</h1>
-                <motion.div ref={draggableContainerReference} className="pr-32 pl-16 pb-8 pt-8">
-                    <div className="flex flex-wrap mb-4 md:flex md:flex-row pt-12 gap-6">
-                        {poems.map(poemData => {
-                            return <Poem {...poemData} />
-                        })}
-                    </div>
-                </motion.div>
+        <>
+            <Header selected="collections" />
+            <div className="App">
+                <div className="pl-16 pt-16">
+                    <h1 className="italic">tap to reveal</h1>
+                    <motion.div ref={draggableContainerReference} className="pr-32 pl-16 pb-8 pt-8">
+                        <div className="flex flex-wrap mb-4 md:flex md:flex-row pt-12 gap-6">
+                            {poems.map(poemData => {
+                                return <Poem {...poemData} />
+                            })}
+                        </div>
+                    </motion.div>
+                </div>
             </div>
-        </div>
+        </>
     );
     //else return other side html 
 }
