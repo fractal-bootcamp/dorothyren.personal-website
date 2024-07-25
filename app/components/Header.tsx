@@ -9,7 +9,7 @@ const ROUTES: Array<{target: string, title: string, re: RegExp}> = [
   {target: '/collections', title: 'collections', re: /^\/collections.*$/}
 ];
 
-export function Header({ }: { selected: string; }) {
+export function Header() {
     const currentPath = useLocation().pathname;
     const routes = ROUTES;
     return (
