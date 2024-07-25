@@ -26,14 +26,14 @@ const SingleSocialBadge = ({ title, targetUrl, imageUrl }: { title: string, targ
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.90 }}
         >
-            <Link to={targetUrl} target="_blank" >
+            <a href={targetUrl} target="_blank" rel="noopener noreferrer">
                 <div className="flex flex-row justify-center items-center">
                     <img src={imageUrl} className="w-[30px]" />
                 </div>
                 {/* <div className="flex flex-row justify-center items-center ">
                     {title}
                 </div> */}
-            </Link>
+            </a>
         </motion.div>
     )
 

@@ -1,6 +1,6 @@
 import { useLocation } from "@remix-run/react";
 import { motion } from "framer-motion"
-import { Link } from "react-router-dom";
+import { Link } from "@remix-run/react";
 
 // List of routes that the nav bar will point to. When re matches the current URL, highlight this button.  -- ssebexen
 const ROUTES: Array<{target: string, title: string, re: RegExp}> = [
