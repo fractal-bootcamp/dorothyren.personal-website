@@ -1,6 +1,6 @@
 
+import { Link } from '@remix-run/react';
 import React from 'react';
-import { Header } from "~/components/Header";
 
 interface Article {
     title: string;
@@ -143,15 +143,14 @@ const articleLinks: Article[] = [
 
 const ContentCollection: React.FC = () => {
     return (<>
-        <Header selected="collections" />
         <div className="p-4">
             <h2 className="text-xl mb-4">Writing by others that have shaped me</h2>
             <ul className="justify-content:flex-start flex-wrap:wrap grid grid-cols-2 gap-8 p-4 max-w-full md:max-w-full ">
                 {articleLinks.map((articleLink: Article, index) => (
                     <li key={index} className="border p-6 rounded-md bg-gray-50 hover:bg-amber-100">
-                        <a href={articleLink.url} className="text-gray-800 underline">
+                        <Link to={articleLink.url} className="text-gray-800 underline">
                             {articleLink.title}
-                        </a>
+                        </Link>
                         <p className="mt-2">{articleLink.description}</p>
                     </li>
                 ))}

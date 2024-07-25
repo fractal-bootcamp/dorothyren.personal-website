@@ -1,3 +1,5 @@
+import { Link } from "@remix-run/react";
+
 export default function About() {
     return (
         <>
@@ -8,7 +10,7 @@ export default function About() {
                 <br></br>
                 <div className="pl-3">
                     <button className="border rounded-md p-2 w-16 bg-gray-50 text-sm">
-                        <a href="/">Home</a>
+                        <Link to="/">Home</Link>
                     </button>
                 </div>
             </div>

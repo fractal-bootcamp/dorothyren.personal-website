@@ -1,3 +1,4 @@
+import { Link } from "@remix-run/react"
 import { motion } from "framer-motion"
 
 // <motion.div 
@@ -25,14 +26,14 @@ const SingleSocialBadge = ({ title, targetUrl, imageUrl }: { title: string, targ
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.90 }}
         >
-            <a href={targetUrl} target="_blank" >
+            <Link to={targetUrl} target="_blank" >
                 <div className="flex flex-row justify-center items-center">
                     <img src={imageUrl} className="w-[30px]" />
                 </div>
                 {/* <div className="flex flex-row justify-center items-center ">
                     {title}
                 </div> */}
-            </a>
+            </Link>
         </motion.div>
     )
 

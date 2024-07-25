@@ -1,25 +1,21 @@
-import React from "react";
-import PoemPage from "./collections.poetry._index";
-import { Header } from "~/components/Header";
-import { Outlet } from "@remix-run/react";
+import { Link } from "@remix-run/react";
 
 export default function Collections() {
     return (
         <>
-            <Header selected="collections" />
             <div className="flex flex-col p-8 m-8 border rounded-md bg-white shadow-md">
                 <div className="justify-content: space-around">
                     <div> collections of poems and concepts </div>
 
                     <div className="underline p-4 ">
                         <ul>
-                            <a href="/collections/poetry">poetry</a>
+                            <Link to="/collections/poetry">poetry</Link>
                         </ul>
                         {/* <ul>
                             <a href="/collections/words">words</a>
                         </ul> */}
                         <ul>
-                            <a href="/collections/content">content</a>
+                            <Link to="/collections/content">content</Link>
                         </ul>
                     </div >
                     <br></br>
