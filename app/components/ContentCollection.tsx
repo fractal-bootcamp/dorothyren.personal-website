@@ -90,11 +90,6 @@ const articleLinks: Article[] = [
         url: "https://www.poetryfoundation.org/poems/49622/perhaps-the-world-ends-here"
     },
     {
-        title: "Choose Wonder",
-        description: "What is the point of being perpetually unimpressed?",
-        url: "https://semi-rad.com/2019/11/choose-wonder/"
-    },
-    {
         title: "‘Forgive me, but it’s hard to be a human’ and 'she lived as though the truth were true’",
         description: "As a teacher, Tommy devoted great time to teaching his section of the class — working on his astonishing lectures and jokes, and meeting endlessly with his dozen students on Zoom, finding what was precious in their work and teasing it out. He loved his students and they loved him back. Not content with giving half of his teaching salary away to save people with malaria by purchasing mosquito nets with global charities, when the semester was over and after his grades were in and the student evaluations were complete, he made individual donations in each of his students’ names to Oxfam, GiveDirectly and other groups targeting global hunger. When I asked him why he did this, he quoted something that he loved which Father Daniel Berrigan said about Dorothy Day: ‘she lived as though the truth were true.’ Tommy said: ‘I wanted them to see that the truth is true.’",
         url: "https://repraskin.medium.com/statement-of-congressman-jamie-raskin-and-sarah-bloom-raskin-on-the-remarkable-life-of-tommy-raskin-f93b0bb5d184"

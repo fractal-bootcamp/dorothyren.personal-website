@@ -48,7 +48,7 @@ const projectList =
         {
             title: "Developer Trading Cards",
             description: "Uses the Nolita AI web scraper to scrape Dev.to developer blog profiles and generate a list of skills and attributes that are then displayed in a collectible trading card format",
-            image: "/projects/fc-realmofdreams.jpeg",
+            image: "",
             link: "https://github.com/fractal-bootcamp/growthhacks.HackerCards"
         },
         {
