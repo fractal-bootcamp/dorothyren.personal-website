@@ -150,7 +150,7 @@ const ContentCollection: React.FC = () => {
     return (<>
         <Header selected="collections" />
         <div className="p-4">
-            <h2 className="text-xl mb-4">Writing by others that have shaped my ways of thinking</h2>
+            <h2 className="text-xl mb-4">Writing by others that have shaped me</h2>
             <ul className="justify-content:flex-start flex-wrap:wrap grid grid-cols-2 gap-8 p-4 max-w-full md:max-w-full ">
                 {articleLinks.map((articleLink: Article, index) => (
                     <li key={index} className="border p-6 rounded-md bg-gray-50 hover:bg-amber-100">
