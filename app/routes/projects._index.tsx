@@ -1,12 +1,9 @@
-import { ReactElement } from "react";
-import { Header } from "~/components/Header";
-import { Socials } from "~/components/SocialButtons";
-
-
 //create an array with all the data that you want to render on screen
 // figure out how to render one instance of that data
 // React component is a building block of React - it's a box that can hold other boxes (turn one project's data into one React component)
 // map takes all the data and applies the transformation to all of them
+
+import { Link } from "@remix-run/react"
 
 // export default function Projects() {
 //     return (
@@ -76,7 +73,11 @@ export function Project(props: ProjectProps) {
     return (
         <>
             <div className="border rounded-md p-4 h-full w-full bg-zinc-100 space-y-4">
-                <a href={props.link} className="underline text-lg block">{props.title}</a>
+                {
+                    typeof props.link === 'string'
+                    ? <Link to={props.link} className="underline text-lg block">{props.title}</Link>
+                    : <p className="underline text-lg">{props.title}</p>
+                }
                 <p>{props.description}</p>
                 {props.image && <img src={props.image} alt={props.title} className="w-full rounded-md" />}
             </div>
@@ -91,7 +92,6 @@ export function Project(props: ProjectProps) {
 export default function ProjectPage() {
     return (
         <>
-            <Header selected="projects" />
             <div className="flex flex-col p-8 m-8 border rounded-md bg-white shadow-md">
                 <div className="mb-4 ">
                     <h1 className="text-xl">These are some projects I'm working on</h1>
