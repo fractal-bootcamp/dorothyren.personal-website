@@ -12,10 +12,16 @@ export function Header({ selected = "" }: { selected: string; }) {
     );
 }
 
+type HeaderButtonProps = {
+    target: string,
+    title: string,
+    selected: string
+}
 
-function HeaderButton({ target, title, selected = "" }: any) {
+
+function HeaderButton({ target, title, selected = "" }: HeaderButtonProps) {
     const conditionalStyles = (target === selected) ?
-        "bg-cyan-200 text-cyan-900" :
+        "bg-amber-300 text-lime-900" :
         "bg-indigo-400 text-white"
 
     const buttonClass = `${conditionalStyles} 
